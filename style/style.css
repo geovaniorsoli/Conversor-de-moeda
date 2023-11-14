@@ -1,0 +1,93 @@
+@font-face {
+    font-family: 'semibold';
+    src: url(../font/OverusedGrotesk-SemiBold.ttf);
+}
+
+
+.body{
+    font-family: 'semibold';
+    background-color: rgb(34, 34, 34);
+    color: rgb(255, 255, 255);
+}
+
+.title{
+    margin: 50px;
+    font-size: 70px;
+}
+
+.container-conversor{
+    background-color: rgb(64, 64, 64);
+    width: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    border: solid 2px #484848;
+}
+
+.container-resultado{
+    width: 100%;
+    padding: 95px;
+    border-radius: 10px;
+    border: solid 2px #484848;
+}
+
+.select{
+    padding: 5px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+    width: 100%;
+}
+
+.input{
+    padding: 3px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+    width: 100%;
+}
+
+.container-fluid{
+    max-width: 200px;
+}
+
+.btn-github{
+    background-color: rgb(59, 59, 59);
+    border: none;
+    border-radius: 5px;
+    border: 2px solid rgb(107, 107, 107);
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+    color: white;
+    font-size: 15px;
+    padding: 7px; 
+}
+
+.btn-github:hover{
+    background-color: rgb(107, 107, 107);
+}
+
+
+@media (max-width: 576px) {
+    h1, h3 {
+        font-size: smaller; 
+    }
+
+    .title{
+        margin: 0px;
+        font-size: 30px;
+    }
+    
+    .container-conversor{
+        
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .container-resultado{
+        width: 100%;
+        padding: 20px;
+        margin-top: 30px;
+    }
+}

@@ -5,8 +5,8 @@ function ConversorMoedas(e) {
     const Valor = parseFloat(document.querySelector('#Qnt').value)
     const mostrar = document.querySelector('#Resultado')
 
-    if (isNaN(Valor) || Valor <= 0) {
-        alert('Por favor, insira um valor válido para conversão.');
+    if (isNaN(Valor) || Valor === 0) {
+        mostrar.innerHTML = `<h1>R$ 0,00</h1>`;
         return;
     }
 
@@ -16,7 +16,7 @@ function ConversorMoedas(e) {
             const Chave = Moeda.replace("-", "");
             const tax = parseFloat(data[Chave].ask)
             const Conversao = (Valor * tax).toFixed(2)
-            mostrar.innerHTML = `Resultado: <h1> ${Conversao} </h1>`
+            mostrar.innerHTML = ` <h1> R$ ${Conversao} <h1>`
 
         })
         .catch((error) => {
@@ -25,7 +25,8 @@ function ConversorMoedas(e) {
     
 }
 
-document.getElementById('Conversor').addEventListener('submit', ConversorMoedas)
+
+document.getElementById('Conversor').addEventListener('input', ConversorMoedas)
 
 function cotacao() {
 
@@ -36,8 +37,8 @@ function cotacao() {
     .then(response => response.json())
     .then(data => {
 
-        dolar.textContent = `R$ ${parseFloat(data.USDBRL.ask).toFixed(2)}`
-        euro.textContent = `R$ ${parseFloat(data.EURBRL.ask).toFixed(2)}`
+        dolar.textContent = `USD ${parseFloat(data.USDBRL.ask).toFixed(2)}`
+        euro.textContent = `EUR ${parseFloat(data.EURBRL.ask).toFixed(2)}`
 
     })
     .catch((error) => {
@@ -45,4 +46,5 @@ function cotacao() {
     })
 }
 
+setInterval(1000, cotacao())
 document.addEventListener('DOMContentLoaded', cotacao)
