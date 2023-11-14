@@ -59,7 +59,9 @@
     transition: all .3s ease-in-out;
     color: white;
     font-size: 15px;
-    padding: 7px; 
+    padding: 10px; 
+    display: flex;
+    align-items: center;
 }
 
 .btn-github:hover{
